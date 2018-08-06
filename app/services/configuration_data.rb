@@ -12,7 +12,7 @@ class ConfigurationData
   end
 
   def coordinates
-      Configuration.coordinate.first
+    Configuration.coordinate.first
   end
 
   def addresses
