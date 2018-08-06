@@ -12,10 +12,7 @@ class ConfigurationData
   end
 
   def coordinates
-    {
-      x: Configuration.coordinate.where(key: 'x'),
-      y: Configuration.coordinate.where(key: 'y')
-    }
+      Configuration.coordinate.first
   end
 
   def addresses
