@@ -5,8 +5,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'active_admin_theme'
 gem 'activeadmin'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'cancancan'
+gem 'devise'
 gem 'draper'
 gem 'fast_jsonapi'
 gem 'mini_magick', '~> 4.8'
@@ -26,10 +29,10 @@ group :development do
   gem 'brakeman'
   gem 'bundler-audit'
   gem 'capistrano-rails'
+  gem 'fasterer'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'overcommit'
   gem 'rails_best_practices'
-  gem 'fasterer'
   gem 'rspec-rails'
   gem 'rubocop', require: false
   gem 'rubocop-rspec'
@@ -42,5 +45,3 @@ group :test do
   gem 'ffaker'
   gem 'rspec'
 end
-
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
