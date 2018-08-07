@@ -27,6 +27,7 @@ end
 
 group :development do
   gem 'brakeman'
+  gem 'bullet'
   gem 'bundler-audit'
   gem 'capistrano-rails'
   gem 'fasterer'
