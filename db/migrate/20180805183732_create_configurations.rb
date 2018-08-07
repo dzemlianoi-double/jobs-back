@@ -4,6 +4,7 @@ class CreateConfigurations < ActiveRecord::Migration[5.2]
       t.string :key, index: true
       t.string :value
       t.integer :basic_type, default: 0
+      t.integer :position
       t.timestamps
     end
   end

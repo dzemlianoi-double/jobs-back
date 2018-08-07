@@ -6,14 +6,16 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 gem 'active_admin_theme'
+gem 'active_model_serializers'
 gem 'activeadmin'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'cancancan'
 gem 'devise'
 gem 'draper'
-gem 'fast_jsonapi'
+gem 'email_validator'
 gem 'mini_magick', '~> 4.8'
 gem 'pg'
+gem 'phonelib'
 gem 'puma', '~> 3.11'
 gem 'rack-cors'
 gem 'rails', '~> 5.2.0'
@@ -27,6 +29,7 @@ end
 
 group :development do
   gem 'brakeman'
+  gem 'bullet'
   gem 'bundler-audit'
   gem 'capistrano-rails'
   gem 'fasterer'
