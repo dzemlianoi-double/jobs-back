@@ -7,6 +7,7 @@ class CreateServices < ActiveRecord::Migration[5.2]
       t.string :photo
       t.integer :position
       t.integer :price
+      t.boolean :active, default: true
       t.timestamps
     end
   end

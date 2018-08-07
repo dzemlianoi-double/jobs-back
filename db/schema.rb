@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2018_08_06_074849) do
     t.string "photo"
     t.integer "position"
     t.integer "price"
+    t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_services_on_name"

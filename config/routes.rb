@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 
   scope 'apis/v1', module: 'apis/v1', as: 'apis_v1', defaults: { format: :json } do
     post 'basic_configurations', to: 'configurations#basic'
+    resources :services
   end
 end
