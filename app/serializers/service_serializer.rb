@@ -1,5 +1,3 @@
-class ServiceSerializer
-  include FastJsonapi::ObjectSerializer
-
-  attributes :name, :short_description, :full_description, :price, :photo
+class ServiceSerializer < ActiveModel::Serializer
+  attributes :id, :name, :short_description, :full_description, :price, :photo
 end
