@@ -2,7 +2,7 @@ module Apis
   module V1
     class ServicesController < ApiController
       def index
-        render json: { services: Service.active.by_position }
+        render json: Service.active.by_position, adapter: :json
       end
     end
   end
