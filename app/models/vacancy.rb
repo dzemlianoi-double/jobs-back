@@ -12,4 +12,5 @@ class Vacancy < ApplicationRecord
   # validates_numericality_of :age_max, greater_than: ->(vacancy) { vacancy.age_min }
   scope :active, -> { where(active: true) }
   scope :by_position, -> { order(:position) }
+  scope :latest, -> { order(created_at: :desc) }
 end

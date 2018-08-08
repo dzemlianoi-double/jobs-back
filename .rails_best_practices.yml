@@ -1,0 +1,1 @@
+RemoveUnusedMethodsInControllersCheck: { except_methods: [index show new create last] }
