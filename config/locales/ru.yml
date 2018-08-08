@@ -6,36 +6,44 @@ ru:
     models:
       configuration:
         one: Настройка
-        few: Настройки
+        few: Настроек
         other: Настройки
+        many: Настроек
       photo:
         one: Картинка
-        few: Картинки
+        few: Картинок
         other: Картинки
+        many: Картинок
       review:
         one: Отзыв
-        few: Отзывы
+        few: Отзывов
         other: Отзывы
+        many: Отзывов
       service:
         one: Услуга
-        few: Услуги
+        few: Услуг
         other: Услуги
+        many: Услуг
       speciality:
         one: Специальность
-        few: Специальности
+        few: Специальностей
         other: Специальности
+        many: Специальностей
       vacancy:
         one: Вакансия
-        few: Вакансии
+        few: Вакансий
         other: Вакансии
+        many: Вакансий
       admin:
         one: Админ
-        few: Админы
+        few: Админов
         other: Админы
+        many: Админов
       claim:
         one: Заявка
-        few: Заявки
+        few: Заявкок
         other: Заявки
+        many: Заявок
     attributes:
       admin:
         password: Пароль
