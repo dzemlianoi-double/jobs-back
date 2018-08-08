@@ -10,6 +10,7 @@ ActiveAdmin.register Service do
     id_column
     %i[name price active short_description].each { |field| column(field) }
     column(:full_description) { |review| review.full_description.truncate(255) }
+    column(:main_img) { |service| image_tag(url_for(service.service_photos.main_photo.image), class: 'max-width-200') }
     actions
   end
 
@@ -24,6 +25,15 @@ ActiveAdmin.register Service do
   show do
     attributes_table do
       %i[name price active full_description short_description].each { |field| row(field) }
+      row(:photos) do |service|
+        ul do
+          service.service_photos.map do |photo|
+            li do
+              image_tag(url_for(photo.image), class: 'max-width-200')
+            end
+          end
+        end
+      end
     end
   end
 end

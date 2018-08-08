@@ -11,6 +11,7 @@ ActiveAdmin.register Vacancy do
   index as: :reorderable_table do
     selectable_column
     %i[title country city is_hot is_on_main active salary age].each { |field| column(field) }
+    column(:main_img) { |vacancy| image_tag(url_for(vacancy.vacancy_photos.main_photo.image), class: 'max-width-200') }
     actions
   end
 
@@ -34,6 +35,15 @@ ActiveAdmin.register Vacancy do
   show do
     attributes_table do
       %i[country city is_hot is_on_main title salary age offers_quantity active info].each { |field| row(field) }
+      row(:photos) do |vacancy|
+        ul do
+          vacancy.vacancy_photos.map do |photo|
+            li do
+              image_tag(url_for(photo.image), class: 'max-width-200')
+            end
+          end
+        end
+      end
     end
   end
 end

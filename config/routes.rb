@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     resources :services, only: %i[index]
     resources :claims, only: %i[create]
     resources :reviews, only: %i[index]
-    resources :vacancies, only: %i[index show]
     resources :specialities, only: %i[index]
+    resources :vacancies, only: %i[index show] do
+      collection do
+        get :last
+      end
+    end
   end
 end
