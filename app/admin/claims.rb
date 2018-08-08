@@ -1,14 +1,29 @@
 ActiveAdmin.register Claim do
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # permit_params :list, :of, :attributes, :on, :model
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:permitted, :attributes]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+  extend Orderable
+
+  permit_params %i[email phone_number text name position]
+
+  %i[name email phone_number].each { |field| filter(field) }
+
+  index as: :reorderable_table do
+    selectable_column
+    id_column
+    %i[name email phone_number].each { |field| column(field) }
+    column(:text) { |claim| claim.text.truncate(255) }
+    actions
+  end
+
+  form do |f|
+    inputs 'Создать заявку' do
+      f.semantic_errors
+      %i[name email phone_number text].each { |field| f.input(field) }
+    end
+    f.actions
+  end
+
+  show do
+    attributes_table do
+      %i[id name email phone_number text].each { |field| row(field) }
+    end
+  end
 end

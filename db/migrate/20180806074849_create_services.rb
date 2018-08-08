@@ -4,10 +4,9 @@ class CreateServices < ActiveRecord::Migration[5.2]
       t.string :name, index: true
       t.string :short_description
       t.text :full_description
-      t.string :photo
-      t.integer :position
       t.integer :price
-      t.boolean :active, default: true
+      t.integer :position
+      t.boolean :active, default: true, index: true
       t.timestamps
     end
   end

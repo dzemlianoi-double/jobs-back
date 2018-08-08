@@ -1,4 +1,3 @@
 class ConfigurationSerializer
-  include FastJsonapi::ObjectSerializer
-  attributes :key, :value
+  attributes :key, :value, :basic_type
 end

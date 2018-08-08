@@ -1,0 +1,96 @@
+ru:
+  time:
+    formats:
+      long: "%Y-%m-%d %H:%M:%S"
+  activerecord:
+    models:
+      configuration:
+        one: Настройка
+        few: Настройки
+        other: Настройки
+      photo:
+        one: Картинка
+        few: Картинки
+        other: Картинки
+      review:
+        one: Отзыв
+        few: Отзывы
+        other: Отзывы
+      service:
+        one: Услуга
+        few: Услуги
+        other: Услуги
+      speciality:
+        one: Специальность
+        few: Специальности
+        other: Специальности
+      vacancy:
+        one: Вакансия
+        few: Вакансии
+        other: Вакансии
+      admin:
+        one: Админ
+        few: Админы
+        other: Админы
+      claim:
+        one: Заявка
+        few: Заявки
+        other: Заявки
+    attributes:
+      admin:
+        password: Пароль
+        password_confirmation: Подтверждение Пароля
+        current_sign_in_at: Время последнего захода
+      claim:
+        phone_number: Номер телефона
+        name: Имя
+        text: Текст
+        position: Номер по порядку
+      configuration:
+        key: Название
+        value: Значение
+        basic_type: Тип настройки
+        position: Номер по порядку
+      photo:
+        name: Название
+        is_main: Основная?
+      review:
+        first_name: Имя
+        last_name: Фамилия
+        text: Текст
+        active: Активный?
+        position: Номер по порядку
+        avatar: Аватар
+      service:
+        name: Название
+        short_description: Краткое описание
+        full_description: Полное описание
+        price: Цена
+        position: Номер по порядку
+        active: Активная?
+      speciality:
+        title: Название
+        position: Номер по порядку
+        active: Активная?
+      vacancy:
+        title: Название
+        country: Страна
+        city: Город
+        salary_min: Минимальна заработная плата
+        salary_max: Максимальная заработная плата
+        offers_quantity: Количество вакансий(предложений)
+        age_min: Минимальный возраст
+        age_max: Максимальный возраст
+        is_hot: Гарячая?
+        is_on_main: Показывать на главной?
+        active: Активная?
+        info: Описание
+        position: Номер по порядку
+        salary: Зарплата
+        age: Возраст
+    errors:
+      models:
+        claim:
+          attributes:
+            phone_number:
+              invalid: Номер телефона неверный
