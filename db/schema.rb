@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_08_111123) do
+ActiveRecord::Schema.define(version: 20180808111123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,16 +76,6 @@ ActiveRecord::Schema.define(version: 2018_08_08_111123) do
     t.index ["key"], name: "index_configurations_on_key"
   end
 
-  create_table "photos", force: :cascade do |t|
-    t.string "name"
-    t.boolean "is_main", default: true
-    t.string "imageable_type"
-    t.bigint "imageable_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["imageable_type", "imageable_id"], name: "index_photos_on_imageable_type_and_imageable_id"
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -96,6 +86,18 @@ ActiveRecord::Schema.define(version: 2018_08_08_111123) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["first_name"], name: "index_reviews_on_first_name"
+  end
+
+  create_table "service_photos", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.integer "position"
+    t.boolean "is_main", default: true
+    t.bigint "service_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_service_photos_on_name"
+    t.index ["service_id"], name: "index_service_photos_on_service_id"
   end
 
   create_table "services", force: :cascade do |t|
@@ -155,6 +157,18 @@ ActiveRecord::Schema.define(version: 2018_08_08_111123) do
     t.index ["salary_max"], name: "index_vacancies_on_salary_max"
     t.index ["salary_min"], name: "index_vacancies_on_salary_min"
     t.index ["title"], name: "index_vacancies_on_title"
+  end
+
+  create_table "vacancy_photos", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.integer "position"
+    t.boolean "is_main", default: true
+    t.bigint "vacancy_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_vacancy_photos_on_name"
+    t.index ["vacancy_id"], name: "index_vacancy_photos_on_vacancy_id"
   end
 
 end

@@ -3,7 +3,7 @@ class Vacancy < ApplicationRecord
 
   has_many :speciality_vacancies
   has_many :specialities, through: :speciality_vacancies
-  has_many :photos, as: :imageable
+  has_many :vacancy_photos
 
   validates_presence_of :title, :country, :city, :salary_min, :age_min, :age_max, :salary_max, :offers_quantity, :info
   validates_numericality_of :salary_min, greater_than_or_equal_to: 0
