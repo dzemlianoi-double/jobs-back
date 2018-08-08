@@ -14,6 +14,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'cancancan'
 gem 'country_select'
 gem 'devise'
+gem 'devise-i18n'
 gem 'draper'
 gem 'email_validator'
 gem 'mini_magick', '~> 4.8'
