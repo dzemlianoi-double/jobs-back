@@ -13,7 +13,7 @@ module Apis
       private
 
       def create_params
-        params.require(:claim).permit(:name, :email, :phone_number, :info)
+        params.require(:claim).permit(:name, :email, :phone_number, :text)
       end
     end
   end

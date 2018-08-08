@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_07_191734) do
+ActiveRecord::Schema.define(version: 20180807191734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2018_08_07_191734) do
     t.string "email"
     t.string "phone_number"
     t.string "name"
-    t.string "info"
+    t.text "text"
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -74,18 +74,19 @@ ActiveRecord::Schema.define(version: 2018_08_07_191734) do
     t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["first_name"], name: "index_reviews_on_first_name"
   end
 
   create_table "services", force: :cascade do |t|
     t.string "name"
     t.string "short_description"
     t.text "full_description"
-    t.string "photo"
-    t.integer "position"
     t.integer "price"
+    t.integer "position"
     t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["active"], name: "index_services_on_active"
     t.index ["name"], name: "index_services_on_name"
   end
 
@@ -95,6 +96,8 @@ ActiveRecord::Schema.define(version: 2018_08_07_191734) do
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["active"], name: "index_specialities_on_active"
+    t.index ["title"], name: "index_specialities_on_title"
   end
 
   create_table "speciality_vacancies", force: :cascade do |t|
@@ -122,6 +125,14 @@ ActiveRecord::Schema.define(version: 2018_08_07_191734) do
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["active"], name: "index_vacancies_on_active"
+    t.index ["age_max"], name: "index_vacancies_on_age_max"
+    t.index ["age_min"], name: "index_vacancies_on_age_min"
+    t.index ["city"], name: "index_vacancies_on_city"
+    t.index ["country"], name: "index_vacancies_on_country"
+    t.index ["is_hot"], name: "index_vacancies_on_is_hot"
+    t.index ["salary_max"], name: "index_vacancies_on_salary_max"
+    t.index ["salary_min"], name: "index_vacancies_on_salary_min"
     t.index ["title"], name: "index_vacancies_on_title"
   end
 
