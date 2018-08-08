@@ -9,4 +9,5 @@ ActiveAdmin.setup do |config|
   config.comments_menu = false
   config.batch_actions = true
   config.localize_format = :long
+  config.before_action :set_admin_locale
 end
