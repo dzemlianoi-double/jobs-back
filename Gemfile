@@ -36,7 +36,11 @@ group :development do
   gem 'brakeman'
   gem 'bullet'
   gem 'bundler-audit'
+  gem 'capistrano'
+  gem 'capistrano-bundler'
   gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano3-puma',   require: false
   gem 'fasterer'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'overcommit'

@@ -1,0 +1,9 @@
+{
+  "id": "worker",
+  "password"  : "$1$toGQgnXv$zVzSMnw3GBgonCtwWuysT.",
+  "ssh_keys"  : [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDTuFT//kmEk0UfN9OZZq0+qGFgUMCh0PfInM2tbgHpJJVblXAy8uXduNzATMVt8NrMIg+5Cc0jSL0Er1S6cfn+d0M6PLAAn6FZPleH3uddIi60kWqcSNrQfteVG4fY2AUm2C1UwoANHUw5ga6rE/+P03ITgZ7EL+E848VDNSIa4tZsdpdfON2g/QuUG4REB95pG1ZtrhMxw1ml0K3y2eSxx8FTWuDCRZ2cdbmITdNOPjlZZYM43P/+Gy9F6aJcWJew5T25Eyr+czJV7db+07aAMhGhCc2BZZ2qNPCbgaBIuf5eY6MluJOyY6Td0laBhCsl/yoy49o8VrMKiDTfVblnT+L9cY/wQRYIDc3Ajo3DhIzinNATVhZdJMinD/YG3usRnlbPO3dH1bLExHHuhpi5afpWGn7iV+KJuZ3qdtWAVXJUPE9tLuSe++L0lhyFzzSHtyDmFILkS2STAxleJ7Iqgx4wtNuoHOijneJ3DEDohmUDZwtOeAcceB0oRo5RpJs/XKgLTsAyGkqrUyXLxbVwnsqrF5Sdhcn4hkrFM2Fp4jNaMX5eljxU0lV7vvXXCnHoC18OuXuiuqEWQy7piQddP4wsvlKDU2OAtOehjssYzUSvXMcHlpSn3R1VrC4jtAKbRTJW5JQeC3i9DAEKQGRHiDB8IXSx5/m6HQ2Vx8edlQ== denis.zemlianoy@rubygarage.org"
+  ],
+  "groups"    : ["sudo" ,"sysadmin", "www-data", "rvm"],
+  "shell"     : "\/bin\/bash"
+}
