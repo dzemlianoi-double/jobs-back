@@ -1,0 +1,74 @@
+{
+  "authorization": {
+    "sudo": {
+      "groups": ["worker", "wheel", "sysadmin"],
+      "users": ["worker"],
+      "passwordless": "false"
+    }
+  },
+  "users": ["worker"],
+  "nodejs":{
+    "version": "0.10.31",
+    "install_method": "source"
+  },
+  "nginx": {
+    "version": "1.7.4",
+    "default_site_enabled": false,
+    "source": {
+      "modules": ["nginx::http_gzip_static_module", "nginx::http_ssl_module"]
+    }
+  },
+  "rvm": {
+    "user_installs": [{
+      "user": "worker",
+      "default_ruby": "2.5.1@global",
+      "rubies": ["2.5.1"]
+    }]
+  },
+  "postgresql": {
+    "version": "9.3",
+    "users": [
+      {
+        "username": "worker",
+        "encrypted_password": "$1$mcVd44I7$z3hhPtbTdlffOQ8kn8WWm0",
+        "superuser": true,
+        "createdb": true,
+        "login": true
+      }
+    ],
+    "databases": [
+      {
+        "name": "worker_production",
+        "owner": "worker",
+        "template": "template0",
+        "encoding": "UTF-8",
+        "locale": "en_US.UTF-8"
+      }
+    ]
+  },
+  "swap_tuning": {
+    "minimum_size": 2048
+  },
+  "redis": {
+    "maxmemory": "256Mb"
+  },
+  "run_list": [
+    "recipe[sudo]",
+    "recipe[chef-solo-search]",
+    "recipe[users::sysadmins]",
+    "recipe[nginx::source]",
+    "recipe[monit]",
+    "recipe[rvm::user]",
+    "recipe[imagemagick::devel]",
+    "recipe[postgresql::server]",
+    "recipe[postgresql::server_dev]",
+    "recipe[postgresql::client]",
+    "recipe[worker-nginx-production]",
+    "recipe[worker-monit]",
+    "recipe[swap_tuning]",
+    "recipe[redis::server]"
+  ],
+  "automatic": {
+    "ipaddress": "142.93.53.196"
+  }
+}
