@@ -1,10 +1,6 @@
 class VacancyDecorator < Draper::Decorator
   delegate_all
 
-  def salary
-    salary_min == salary_max ? salary_min : "#{salary_min} - #{salary_max}"
-  end
-
   def age
     age_min == age_max ? age_min : "#{age_min} - #{age_max}"
   end

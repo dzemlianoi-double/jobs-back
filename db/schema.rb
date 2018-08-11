@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180808111123) do
+ActiveRecord::Schema.define(version: 2018_08_11_113005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -137,7 +137,6 @@ ActiveRecord::Schema.define(version: 20180808111123) do
     t.string "country"
     t.string "city"
     t.integer "salary_min"
-    t.integer "salary_max"
     t.integer "offers_quantity"
     t.integer "age_min"
     t.integer "age_max"
@@ -148,13 +147,14 @@ ActiveRecord::Schema.define(version: 20180808111123) do
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "video_url"
+    t.date "arrive_date"
     t.index ["active"], name: "index_vacancies_on_active"
     t.index ["age_max"], name: "index_vacancies_on_age_max"
     t.index ["age_min"], name: "index_vacancies_on_age_min"
     t.index ["city"], name: "index_vacancies_on_city"
     t.index ["country"], name: "index_vacancies_on_country"
     t.index ["is_hot"], name: "index_vacancies_on_is_hot"
-    t.index ["salary_max"], name: "index_vacancies_on_salary_max"
     t.index ["salary_min"], name: "index_vacancies_on_salary_min"
     t.index ["title"], name: "index_vacancies_on_title"
   end

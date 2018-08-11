@@ -10,4 +10,5 @@ ActiveAdmin.setup do |config|
   config.batch_actions = true
   config.localize_format = :long
   config.before_action :set_admin_locale
+  config.download_links = %i[csv xml json xls]
 end

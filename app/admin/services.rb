@@ -10,7 +10,9 @@ ActiveAdmin.register Service do
     id_column
     %i[name price active short_description].each { |field| column(field) }
     column(:full_description) { |review| review.full_description.truncate(255) }
-    column(:main_img) { |service| admin_image_view(service.service_photos.main_image, :image) }
+    column(I18n.t('active_admin.additional_fields.main_img')) do |service|
+      admin_image_view(service.service_photos.main_photo, :image)
+    end
     actions
   end
 
@@ -25,7 +27,7 @@ ActiveAdmin.register Service do
   show do
     attributes_table do
       %i[name price active full_description short_description].each { |field| row(field) }
-      row(:photos) do |service|
+      row I18n.t('active_admin.additional_fields.photos') do |service|
         ul do
           service.service_photos.map do |photo|
             li do

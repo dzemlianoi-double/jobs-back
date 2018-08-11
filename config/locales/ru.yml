@@ -1,4 +1,8 @@
 ru:
+  active_admin:
+    additional_fields:
+      photos: Фотографии
+      main_img: Главная картинка
   time:
     formats:
       long: "%Y-%m-%d %H:%M:%S"
@@ -9,11 +13,16 @@ ru:
         few: Настроек
         other: Настройки
         many: Настроек
-      photo:
-        one: Картинка
-        few: Картинок
-        other: Картинки
-        many: Картинок
+      vacancy_photo:
+        one: Фото Вакансии
+        few: Фото Вакансий
+        other: Фото Вакансии
+        many: Фото Вакансий
+      service_photo:
+        one: Фото Услуги
+        few: Фото Услуг
+        other: Фото Услуги
+        many: Фото Услуг 
       review:
         one: Отзыв
         few: Отзывов
@@ -59,6 +68,13 @@ ru:
         value: Значение
         basic_type: Тип настройки
         position: Номер по порядку
+      configuration/basic_types:
+        other: Остальные
+        email: Имейлы
+        address: Адреса
+        phone_number: Номера телефонов
+        coordinate: Координаты
+        social_link: Ссылки на социальные сети
       photo:
         name: Название
         is_main: Основная?
@@ -82,10 +98,12 @@ ru:
         active: Активная?
       vacancy:
         title: Название
+        main_img: Основная картинка
         country: Страна
         city: Город
         salary_min: Минимальна заработная плата
-        salary_max: Максимальная заработная плата
+        arrive_date: Дата заезда
+        video_url: URL видео
         offers_quantity: Количество вакансий(предложений)
         age_min: Минимальный возраст
         age_max: Максимальный возраст
@@ -96,6 +114,18 @@ ru:
         position: Номер по порядку
         salary: Зарплата
         age: Возраст
+      vacancy_photo:
+        name: Название
+        image: Фото
+        is_main: Главная?
+        vacancy: Вакансия
+        vacancy_id: Вакансия
+      service_photo: 
+        name: Название
+        image: Фото
+        is_main: Главная?
+        service: Услуга
+        service_id: Услуга
     errors:
       models:
         claim:

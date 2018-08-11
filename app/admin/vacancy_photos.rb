@@ -1,6 +1,8 @@
 ActiveAdmin.register VacancyPhoto do
   extend Orderable
 
+  menu parent: I18n.t('active_admin.additional_fields.photos')
+
   permit_params %i[name is_main image position vacancy_id]
 
   %i[name is_main vacancy].each { |filter_name| filter(filter_name) }

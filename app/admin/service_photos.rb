@@ -1,6 +1,8 @@
 ActiveAdmin.register ServicePhoto do
   extend Orderable
 
+  menu parent: I18n.t('active_admin.additional_fields.photos')
+
   permit_params %i[name is_main image service_id position]
 
   %i[name is_main service].each { |filter_name| filter(filter_name) }
@@ -9,7 +11,7 @@ ActiveAdmin.register ServicePhoto do
     selectable_column
     id_column
     %i[name is_main service].each { |field| column(field) }
-    column(:main_image) { |current_service| admin_image_view(current_service, :image) }
+    column(:image) { |current_service| admin_image_view(current_service, :image) }
     actions
   end
 
@@ -25,7 +27,7 @@ ActiveAdmin.register ServicePhoto do
   show do
     attributes_table do
       %i[name is_main service].each { |field| row(field) }
-      row(:main_image) { |current_service| admin_image_view(current_service, :image) }
+      row(:image) { |current_service| admin_image_view(current_service, :image) }
     end
   end
 end

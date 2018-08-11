@@ -8,6 +8,7 @@ ruby '2.5.1'
 gem 'active_admin_theme'
 gem 'active_model_serializers'
 gem 'activeadmin'
+gem 'activeadmin-xls', '~>2.0.0'
 gem 'activeadmin_reorderable'
 gem 'acts_as_list'
 gem 'bootsnap', '>= 1.1.0', require: false
