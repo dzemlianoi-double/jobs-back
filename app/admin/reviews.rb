@@ -10,7 +10,7 @@ ActiveAdmin.register Review do
     id_column
     %i[first_name last_name active].each { |field| column(field) }
     column(:text) { |review| review.text.truncate(255) }
-    column(:avatar) { |review| image_tag url_for(review.avatar, class: 'max-width-200') }
+    column(:avatar) { |review| admin_image_view(review, :avatar) }
     actions
   end
 
@@ -18,7 +18,7 @@ ActiveAdmin.register Review do
     inputs 'Создать отзыв' do
       f.semantic_errors
       %i[first_name last_name active text].each { |field| f.input(field) }
-      f.input :avatar, as: :file, hint: image_tag(url_for(f.object.avatar), class: 'max-width-200')
+      f.input :avatar, as: :file, hint: admin_image_view(f.object, :avatar)
     end
     f.actions
   end
@@ -26,7 +26,7 @@ ActiveAdmin.register Review do
   show do
     attributes_table do
       %i[first_name last_name active text].each { |field| row(field) }
-      row(:avatar) { |review| image_tag url_for(review.avatar, class: 'max-width-200') }
+      row(:avatar) { |review| admin_image_view(review, :avatar) }
     end
   end
 end

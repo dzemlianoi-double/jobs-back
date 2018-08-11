@@ -9,7 +9,7 @@ ActiveAdmin.register VacancyPhoto do
     selectable_column
     id_column
     %i[name is_main vacancy].each { |field| column(field) }
-    column(:image) { |photo| image_tag(url_for(photo.image), class: 'max-width-200') }
+    column(:image) { |photo| admin_image_view(photo, :image) }
     actions
   end
 
@@ -17,7 +17,7 @@ ActiveAdmin.register VacancyPhoto do
     inputs 'Создать отзыв' do
       f.semantic_errors
       %i[name is_main vacancy].each { |field| f.input(field) }
-      f.input :image, as: :file, hint: f.object.persisted? ? image_tag(url_for(f.object.image), class: 'max-width-200') : 'No image' # rubocop:disable Metrics/LineLength
+      f.input :image, as: :file, hint: admin_image_view(f.object, :image)
     end
     f.actions
   end
@@ -25,7 +25,7 @@ ActiveAdmin.register VacancyPhoto do
   show do
     attributes_table do
       %i[name is_main vacancy].each { |field| row(field) }
-      row(:image) { |photo| image_tag(url_for(photo.image), class: 'max-width-200') }
+      row(:image) { |photo| admin_image_view(photo, :image) }
     end
   end
 end

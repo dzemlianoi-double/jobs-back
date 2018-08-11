@@ -9,9 +9,7 @@ ActiveAdmin.register ServicePhoto do
     selectable_column
     id_column
     %i[name is_main service].each { |field| column(field) }
-    column(:main_image) do |current_service|
-      image_tag(url_for(current_service.image), class: 'max-width-200')
-    end
+    column(:main_image) { |current_service| admin_image_view(current_service, :image) }
     actions
   end
 
@@ -19,7 +17,7 @@ ActiveAdmin.register ServicePhoto do
     inputs 'Создать отзыв' do
       f.semantic_errors
       %i[name is_main service].each { |field| f.input(field) }
-      f.input :image, as: :file, hint: f.object.persisted? ? image_tag(url_for(f.object.image), class: 'max-width-200') : 'No image' # rubocop:disable Metrics/LineLength
+      f.input :image, as: :file, hint: admin_image_view(current_service, :image)
     end
     f.actions
   end
@@ -27,6 +25,7 @@ ActiveAdmin.register ServicePhoto do
   show do
     attributes_table do
       %i[name is_main service].each { |field| row(field) }
+      row(:main_image) { |current_service| admin_image_view(current_service, :image) }
     end
   end
 end

@@ -10,7 +10,7 @@ ActiveAdmin.register Service do
     id_column
     %i[name price active short_description].each { |field| column(field) }
     column(:full_description) { |review| review.full_description.truncate(255) }
-    column(:main_img) { |service| image_tag(url_for(service.service_photos.main_photo.image), class: 'max-width-200') }
+    column(:main_img) { |service| admin_image_view(service.service_photos.main_image, :image) }
     actions
   end
 
@@ -29,7 +29,7 @@ ActiveAdmin.register Service do
         ul do
           service.service_photos.map do |photo|
             li do
-              image_tag(url_for(photo.image), class: 'max-width-200')
+              admin_image_view(photo, :image)
             end
           end
         end
