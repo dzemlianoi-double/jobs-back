@@ -40,7 +40,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
-  gem 'capistrano3-puma',   require: false
+  gem 'capistrano3-puma', require: false
   gem 'fasterer'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'overcommit'
@@ -56,4 +56,8 @@ group :test do
   gem 'factory_bot_rails'
   gem 'ffaker'
   gem 'rspec'
+end
+
+group :production do
+  gem 'aws-sdk-s3', require: false
 end

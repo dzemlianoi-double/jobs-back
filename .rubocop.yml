@@ -2,6 +2,7 @@ AllCops:
   Exclude:
     - 'db/**/*'
     - 'config/**/*'
+    - 'chef/**/*'
 
 LineLength:
   Enabled: true
