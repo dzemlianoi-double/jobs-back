@@ -10,8 +10,6 @@ PreCommit:
     enabled: true
   RailsBestPractices:
     enabled: true
-  Bullet:
-    enabled: true
 PrePush:
   Brakeman:
     enabled: true
