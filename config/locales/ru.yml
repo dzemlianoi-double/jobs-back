@@ -3,6 +3,10 @@ ru:
     additional_fields:
       photos: Фотографии
       main_img: Главная картинка
+    validations:
+      vacancy_photo: У вас уже есть главная картинка для этой вакансии
+      vacancy:
+        age_max: Максимальный возраст должен быть больше чем минимальный
   time:
     formats:
       long: "%Y-%m-%d %H:%M:%S"
@@ -63,6 +67,7 @@ ru:
         name: Имя
         text: Текст
         position: Номер по порядку
+        source: Источник
       configuration:
         key: Название
         value: Значение
@@ -114,6 +119,8 @@ ru:
         position: Номер по порядку
         salary: Зарплата
         age: Возраст
+        sex: Пол
+        experience: Опыт работы
       vacancy_photo:
         name: Название
         image: Фото

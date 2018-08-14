@@ -26,3 +26,5 @@
 /config/master.key
 /chef/tmp/*
 /chef/cookbooks/*
+
+.vscode

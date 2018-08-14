@@ -5,6 +5,7 @@ class Review < ApplicationRecord
 
   validates :first_name, presence: true
   validates :text, presence: true
+  validates :avatar, presence: true
 
   scope :active, -> { where(active: true) }
   scope :by_position, -> { order(:position) }

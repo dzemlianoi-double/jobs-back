@@ -29,7 +29,9 @@ class ConfigurationData
       phone_numbers: phone_numbers,
       social_links: social_links,
       coordinates: coordinates,
-      addresses: addresses
+      addresses: addresses,
+      reviews: ActiveModel::SerializableResource.new(Review.active.by_position).as_json,
+      vacancies: ActiveModel::SerializableResource.new(Vacancy.active.by_position).as_json
     }
   end
 

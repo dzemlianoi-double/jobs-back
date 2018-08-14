@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_11_113005) do
+ActiveRecord::Schema.define(version: 2018_08_14_185700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2018_08_11_113005) do
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "source", default: 0
     t.index ["email"], name: "index_claims_on_email"
     t.index ["name"], name: "index_claims_on_name"
     t.index ["phone_number"], name: "index_claims_on_phone_number"
@@ -149,6 +150,8 @@ ActiveRecord::Schema.define(version: 2018_08_11_113005) do
     t.datetime "updated_at", null: false
     t.string "video_url"
     t.date "arrive_date"
+    t.integer "sex", default: 0
+    t.integer "experience", default: 0
     t.index ["active"], name: "index_vacancies_on_active"
     t.index ["age_max"], name: "index_vacancies_on_age_max"
     t.index ["age_min"], name: "index_vacancies_on_age_min"

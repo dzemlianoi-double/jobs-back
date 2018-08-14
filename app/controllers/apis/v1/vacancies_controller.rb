@@ -13,7 +13,7 @@ module Apis
       end
 
       def last
-        render json: Vacancy.latest.first(quantity)
+        render json: Vacancy.latest.first(quantity), adapter: :json
       end
 
       private
