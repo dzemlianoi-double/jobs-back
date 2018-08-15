@@ -16,4 +16,9 @@ class Vacancy < ApplicationRecord
   scope :latest, -> { order(created_at: :desc) }
   scope :for_main, -> { where(is_main: true) }
   scope :hot, -> { where(is_hot: true) }
+
+  def country_name
+    full_country_name = ISO3166::Country[country]
+    full_country_name.translations[I18n.locale.to_s] || country.name
+  end
 end
