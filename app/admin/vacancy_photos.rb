@@ -9,7 +9,6 @@ ActiveAdmin.register VacancyPhoto do
 
   index as: :reorderable_table do
     selectable_column
-    id_column
     %i[name is_main vacancy].each { |field| column(field) }
     column(:image) { |photo| admin_image_view(photo, :image) }
     actions

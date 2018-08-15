@@ -8,6 +8,7 @@ ruby '2.5.1'
 gem 'active_admin_theme'
 gem 'active_model_serializers'
 gem 'activeadmin'
+gem 'activeadmin-select2', git: 'https://github.com/mfairburn/activeadmin-select2'
 gem 'activeadmin-xls', '~>2.0.0'
 gem 'activeadmin_reorderable'
 gem 'acts_as_list'
@@ -26,6 +27,7 @@ gem 'rack-cors'
 gem 'rails', '~> 5.2.0'
 gem 'rails-i18n'
 gem 'redis', '~> 4.0'
+gem 'select2-rails'
 
 group :development, :test do
   gem 'pry', platforms: %i[mri mingw x64_mingw]

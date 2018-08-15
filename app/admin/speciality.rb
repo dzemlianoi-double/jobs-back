@@ -7,10 +7,8 @@ ActiveAdmin.register Speciality do
 
   index as: :reorderable_table do
     selectable_column
-    id_column
     column :title
     column :active
-    column(:vacancies) { |speciality| speciality.vacancies.pluck(:title).join("\n") }
     actions
   end
 
@@ -26,7 +24,9 @@ ActiveAdmin.register Speciality do
   show do
     attributes_table do
       %i[id title active].each { |field| row(field) }
-      row(:vacancies) { |speciality| speciality.vacancies.pluck(:title).join("\n") }
+      row I18n.t('active_admin.additional_fields.vacancies') do |speciality|
+        ul { speciality.vacancies.map { |vacancy| li { link_to vacancy.title, admin_vacancy_path(vacancy) } } }
+      end
     end
   end
 end

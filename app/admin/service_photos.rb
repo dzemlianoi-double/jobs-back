@@ -9,7 +9,6 @@ ActiveAdmin.register ServicePhoto do
 
   index as: :reorderable_table do
     selectable_column
-    id_column
     %i[name is_main service].each { |field| column(field) }
     column(:image) { |current_service| admin_image_view(current_service, :image) }
     actions

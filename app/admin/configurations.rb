@@ -7,7 +7,6 @@ ActiveAdmin.register Configuration do
 
   index as: :reorderable_table do
     selectable_column
-    id_column
     %i[key value basic_type].each { |field| column(field) }
     actions
   end

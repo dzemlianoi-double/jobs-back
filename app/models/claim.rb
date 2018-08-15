@@ -3,6 +3,8 @@ class Claim < ApplicationRecord
 
   enum source: %i[Website Office Phone Another]
 
+  belongs_to :vacancy
+
   validates :name, presence: true
   validates :email, email: true
   validates :phone_number, phone: { possible: true, allow_blank: true, types: %i[mobile] }

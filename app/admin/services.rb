@@ -7,7 +7,6 @@ ActiveAdmin.register Service do
 
   index as: :reorderable_table do
     selectable_column
-    id_column
     %i[name price active short_description].each { |field| column(field) }
     column(:full_description) { |review| review.full_description.truncate(255) }
     column(I18n.t('active_admin.additional_fields.main_img')) do |service|

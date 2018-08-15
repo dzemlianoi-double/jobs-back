@@ -7,7 +7,6 @@ ActiveAdmin.register Review do
 
   index as: :reorderable_table do
     selectable_column
-    id_column
     %i[first_name last_name active].each { |field| column(field) }
     column(:text) { |review| review.text.truncate(255) }
     column(:avatar) { |review| admin_image_view(review, :avatar) }

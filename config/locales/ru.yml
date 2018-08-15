@@ -3,6 +3,8 @@ ru:
     additional_fields:
       photos: Фотографии
       main_img: Главная картинка
+      specialities: Специальности
+      vacancies: Вакансии
     validations:
       vacancy_photo: У вас уже есть главная картинка для этой вакансии
       vacancy:
@@ -68,6 +70,7 @@ ru:
         text: Текст
         position: Номер по порядку
         source: Источник
+        vacancy: Пришел с Вакансии
       configuration:
         key: Название
         value: Значение
@@ -112,7 +115,7 @@ ru:
         offers_quantity: Количество вакансий(предложений)
         age_min: Минимальный возраст
         age_max: Максимальный возраст
-        is_hot: Гарячая?
+        is_hot: Горячая?
         is_on_main: Показывать на главной?
         active: Активная?
         info: Описание
