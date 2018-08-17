@@ -31,7 +31,8 @@ class ConfigurationData
       coordinates: coordinates,
       addresses: addresses,
       reviews: ActiveModel::SerializableResource.new(Review.active.by_position).as_json,
-      vacancies: ActiveModel::SerializableResource.new(Vacancy.active.by_position).as_json
+      vacancies: ActiveModel::SerializableResource.new(Vacancy.active.latest).as_json,
+      services: ActiveModel::SerializableResource.new(Service.active.by_position.for_main).as_json
     }
   end
 
