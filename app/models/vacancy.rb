@@ -11,7 +11,6 @@ class Vacancy < ApplicationRecord
   validates_presence_of :title, :country, :city, :salary_min, :age_min, :age_max, :offers_quantity, :info
   validates_numericality_of :salary_min, greater_than_or_equal_to: 0
   validates_numericality_of :age_min, greater_than_or_equal_to: 16
-  validates_numericality_of :age_max, greater_than: ->(vacancy) { vacancy.age_min }, message: I18n.t('active_admin.validations.vacancy.age_max')
   scope :active, -> { where(active: true) }
   scope :by_position, -> { order(:position) }
   scope :latest, -> { order(created_at: :desc) }
