@@ -4,8 +4,9 @@ class ServiceSerializer < ActiveModel::Serializer
   attributes :id, :name, :short_description, :full_description, :price, :main_photo, :photos
 
   def main_photo
+    return unless object.service_photos.main_photo.present?
     return  object.service_photos.main_photo.image.try(:service_url) if Rails.env.production?
-    url_for(object.service_photos.main_photo.image) if object.service_photos.main_photo.present?
+    url_for(object.service_photos.main_photo.image) 
   end
 
   def photos

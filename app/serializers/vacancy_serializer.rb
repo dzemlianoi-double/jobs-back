@@ -7,8 +7,9 @@ class VacancySerializer < ActiveModel::Serializer
              :is_hot, :info, :sex, :experience, :main_photo, :photos, :country_name, :created_at
 
   def main_photo
-    return  object.vacancy_photos.main_photo.image.try(:service_url) if Rails.env.production?
-    url_for(object.vacancy_photos.main_photo.image) if object.vacancy_photos.main_photo.present?
+    return unless object.vacancy_photos.main_photo.present?
+    return object.vacancy_photos.main_photo.image.try(:service_url) if Rails.env.production?
+    url_for(object.vacancy_photos.main_photo.image)
   end
 
   def photos
