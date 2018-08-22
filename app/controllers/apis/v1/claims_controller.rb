@@ -6,14 +6,14 @@ module Apis
         if claim.persisted?
           render nothing: true, status: :ok
         else
-          render json: { errors: claim.errors.messages }, statue: :error
+          render json: { errors: claim.errors.messages }, status: :error
         end
       end
 
       private
 
       def create_params
-        params.require(:claim).permit(:name, :email, :phone_number, :text)
+        params.require(:claim).permit(:name, :email, :phone_number, :text, :vacancy_id)
       end
     end
   end
