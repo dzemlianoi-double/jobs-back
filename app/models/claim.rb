@@ -3,7 +3,7 @@ class Claim < ApplicationRecord
 
   enum source: %i[Website Office Phone Another]
 
-  belongs_to :vacancy
+  belongs_to :reasonable, polymorphic: true
 
   validates :name, presence: true
   validates :email, email: true

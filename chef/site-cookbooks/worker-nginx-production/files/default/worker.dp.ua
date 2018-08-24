@@ -37,8 +37,23 @@ server {
 
   add_header Strict-Transport-Security "max-age=31536000;";
 
-  location / {
+  location /apis {
     try_files $uri @puma;
+  }
+
+  location /admin {
+     try_files $uri @puma;
+  }
+
+  location /assets {
+    try_files $uri @puma;
+  }
+
+  location / {
+    root /home/worker/sites/worker-front;
+    index index.html;
+    rewrite ^/$ /index.html break;
+    try_files $uri $uri/ /index.html =404;
   }
 
   location ~*  \.(jpg|jpeg|png|gif|ico|css|js|woff)$ {

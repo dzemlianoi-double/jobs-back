@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_15_192028) do
+ActiveRecord::Schema.define(version: 2018_08_24_103451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,11 +62,12 @@ ActiveRecord::Schema.define(version: 2018_08_15_192028) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "source", default: 0
-    t.bigint "vacancy_id"
+    t.string "reasonable_type"
+    t.bigint "reasonable_id"
     t.index ["email"], name: "index_claims_on_email"
     t.index ["name"], name: "index_claims_on_name"
     t.index ["phone_number"], name: "index_claims_on_phone_number"
-    t.index ["vacancy_id"], name: "index_claims_on_vacancy_id"
+    t.index ["reasonable_type", "reasonable_id"], name: "index_claims_on_reasonable_type_and_reasonable_id"
   end
 
   create_table "configurations", force: :cascade do |t|
@@ -112,6 +113,7 @@ ActiveRecord::Schema.define(version: 2018_08_15_192028) do
     t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "icon"
     t.index ["active"], name: "index_services_on_active"
     t.index ["name"], name: "index_services_on_name"
   end
@@ -176,5 +178,4 @@ ActiveRecord::Schema.define(version: 2018_08_15_192028) do
     t.index ["vacancy_id"], name: "index_vacancy_photos_on_vacancy_id"
   end
 
-  add_foreign_key "claims", "vacancies"
 end

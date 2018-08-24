@@ -15,7 +15,7 @@ ActiveAdmin.register Vacancy do
     %i[title country city arrive_date is_hot is_on_main active salary_min age].each do |field|
       column(field)
     end
-    column(:country) { |vacancy| vacancy.country_name}
+    column(:country, &:country_name)
     column(I18n.t('active_admin.additional_fields.main_img')) do |vacancy|
       admin_image_view(vacancy.vacancy_photos.main_photo, :image)
     end
@@ -38,15 +38,15 @@ ActiveAdmin.register Vacancy do
     inputs 'Тип Вакансии' do
       %i[is_hot is_on_main].each { |field| f.input(field) }
       f.input :specialities, as: :select2_multiple,
-                           multiple: true,
-                           input_html: { class: 'specialities-select' }
+                             multiple: true,
+                             input_html: { class: 'specialities-select' }
     end
     f.actions
   end
 
   show do
     attributes_table do
-      row(:country) { |vacancy| vacancy.country_name}
+      row(:country, &:country_name)
       %i[city arrive_date is_hot is_on_main sex title experience salary_min age active info video_url].each do |field|
         row(field)
       end
@@ -54,7 +54,7 @@ ActiveAdmin.register Vacancy do
       row I18n.t('active_admin.additional_fields.specialities') do |vacancy|
         ul { vacancy.specialities.map { |spec| li { link_to spec.title, admin_speciality_path(spec) } } }
       end
-      
+
       row I18n.t('active_admin.additional_fields.photos') do |vacancy|
         ul do
           vacancy.vacancy_photos.map do |photo|

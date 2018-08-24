@@ -7,8 +7,8 @@ ActiveAdmin.register Claim do
 
   index as: :reorderable_table do
     selectable_column
-    %i[name email phone_number source vacancy].each { |field| column(field) }
-    column(:text) { |claim| claim.text.truncate(255) }
+    %i[name email phone_number source reasonable].each { |field| column(field) }
+    column(:text) { |claim| claim.text.try(:truncate, 255) }
     actions
   end
 

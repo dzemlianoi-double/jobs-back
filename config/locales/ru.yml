@@ -71,7 +71,7 @@ ru:
         text: Текст
         position: Номер по порядку
         source: Источник
-        vacancy: Пришел с Вакансии
+        reasonable: Отклик на
       configuration:
         key: Название
         value: Значение
@@ -125,6 +125,7 @@ ru:
         age: Возраст
         sex: Пол
         experience: Опыт работы
+        icon: Иконка
       vacancy_photo:
         name: Название
         image: Фото
