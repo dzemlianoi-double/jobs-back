@@ -30,6 +30,7 @@ gem 'rails-i18n'
 gem 'redis', '~> 4.0'
 gem 'sass-rails'
 gem 'select2-rails'
+gem 'telegram-bot'
 
 group :development, :test do
   gem 'pry', platforms: %i[mri mingw x64_mingw]

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     post 'basic_configurations', to: 'configurations#basic'
     resources :services, only: %i[index]
     resources :claims, only: %i[create]
+    resources :friend_suggestions, only: %i[create]
     resources :reviews, only: %i[index]
     resources :specialities, only: %i[index]
     resources :vacancies, only: %i[index show] do

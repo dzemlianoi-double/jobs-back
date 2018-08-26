@@ -12,4 +12,11 @@ class Claim < ApplicationRecord
   validates :phone_number, presence: true, unless: :email?
 
   scope :by_position, -> { order(:position) }
+
+  def claim_type
+    case reasonable.class.to_s
+    when 'Vacancy' then { name: 'вакансию', title: reasonable.title }
+    when 'Service' then { name: 'услугу', title: reasonable.name }
+    end
+  end
 end
