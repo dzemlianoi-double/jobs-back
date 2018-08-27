@@ -1,0 +1,9 @@
+<h1>Новый отклик на <%= @claim.claim_type[:name] %> - <%= @claim.claim_type[:title] %></h1>
+<hr>
+<ul>
+  <li>Имя: <%= @claim.name %></li>
+  <li>Телефон: <%= @claim.phone_number %></li>
+  <li>Email: <%= @claim.email %></li>
+  <li>Дополнительная информация: <%= @claim.text %></li>
+  <li>Отклик на: <%= @claim.claim_type[:name] %> - <%= @claim.claim_type[:title] %></li>
+</ul>

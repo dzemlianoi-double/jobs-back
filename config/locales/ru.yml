@@ -20,6 +20,11 @@ ru:
         few: Настроек
         other: Настройки
         many: Настроек
+      friend_suggestion:
+        one: Рекомендация
+        few: Рекомендаций
+        other: Рекомендации
+        many: Рекомендаций
       vacancy_photo:
         one: Фото Вакансии
         few: Фото Вакансий
@@ -84,6 +89,9 @@ ru:
         phone_number: Номера телефонов
         coordinate: Координаты
         social_link: Ссылки на социальные сети
+      friend_suggestion:
+        phone_number: Номер телефона
+        name: Имя
       photo:
         name: Название
         is_main: Основная?
