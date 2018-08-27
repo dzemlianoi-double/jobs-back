@@ -8,12 +8,12 @@ class NotificationMailer < ApplicationMailer
 
   def suggestion_email
     @suggestion = params[:suggestion]
-    mail(to: model.email.pluck(:value), subject: 'Новый отклик!')
+    mail(to: model.email.pluck(:value), subject: 'Новый совет другу!')
   end
 
   private
 
   def model
-    ApplicationRecord.descendants.select { |klass| klass.to_s == 'Configuration' }.join(', ')
+    ApplicationRecord.descendants.select { |klass| klass.to_s == 'Configuration' }.first
   end
 end

@@ -27,6 +27,9 @@ Rails.application.configure do
     enable_starttls_auto: true
   }
 
+  config.time_zone = 'Europe/Kiev'
+  config.active_record.default_timezone = :local
+
   config.log_formatter = ::Logger::Formatter.new
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?

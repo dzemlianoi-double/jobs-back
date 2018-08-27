@@ -15,6 +15,9 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  config.time_zone = 'Europe/Kiev'
+  config.active_record.default_timezone = :local
+
   config.active_storage.service = :local
   config.after_initialize do
     Bullet.enable = true

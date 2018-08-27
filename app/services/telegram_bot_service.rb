@@ -23,13 +23,13 @@ Email: #{@claim.email}
   end
 
   def suggestion_text
-    "Новая рекоммендация вакансии #{@suggestion.vacancy.name} другу!
+    "Новая рекоммендация вакансии #{@suggestion.vacancy.title} другу!
 ----------------------------
 Имя: #{@suggestion.name}
 Телефон: #{@suggestion.phone_number}"
   end
 
   def send_message(text)
-    Configuration.telegram_recipient.each { |id| Telegram.bot.send_message(chat_id: id, text: text) }
+    Configuration.telegram_recipient.pluck(:value).each { |id| Telegram.bot.send_message(chat_id: id, text: text) }
   end
 end

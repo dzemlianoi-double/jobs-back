@@ -7,7 +7,8 @@ ActiveAdmin.register FriendSuggestion do
     selectable_column
     column :name
     column :phone_number
-    column :vacancy_id
+    column :vacancy
+    column :created_at
     actions
   end
 
@@ -23,7 +24,7 @@ ActiveAdmin.register FriendSuggestion do
 
   show do
     attributes_table do
-      %i[name phone_number vacancy].each { |field| row(field) }
+      %i[name phone_number vacancy created_at].each { |field| row(field) }
     end
   end
 end
