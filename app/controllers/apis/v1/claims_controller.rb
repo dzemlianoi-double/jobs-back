@@ -19,8 +19,8 @@ module Apis
       end
 
       def entity
-        return Vacancy.find(params[:vacancy_id]) if params[:vacancy_id].present?
-        Service.find(params[:service_id]) if params[:service_id].present?
+        return Vacancy.find(params[:claim][:vacancy_id]) if params[:claim][:vacancy_id].present?
+        Service.find(params[:claim][:service_id]) if params[:claim][:service_id].present?
       end
 
       def create_params
