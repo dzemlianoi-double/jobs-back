@@ -103,8 +103,8 @@ ru:
         position: Номер по порядку
         avatar: Аватар
       service:
+        by_agreement: Цена по договренности
         name: Название
-        short_description: Краткое описание
         full_description: Полное описание
         price: Цена
         position: Номер по порядку

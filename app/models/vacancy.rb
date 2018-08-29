@@ -11,6 +11,8 @@ class Vacancy < ApplicationRecord
   validates_presence_of :title, :country, :city, :salary_min, :age_min, :age_max, :offers_quantity, :info
   validates_numericality_of :salary_min, greater_than_or_equal_to: 0
   validates_numericality_of :age_min, greater_than_or_equal_to: 16
+  validates_datetime :arrive_date, after: :now
+
   scope :active, -> { where(active: true) }
   scope :by_position, -> { order(:position) }
   scope :latest, -> { order(created_at: :desc) }

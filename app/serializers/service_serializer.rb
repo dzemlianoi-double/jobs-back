@@ -1,7 +1,7 @@
 class ServiceSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
 
-  attributes :id, :name, :short_description, :full_description, :price, :main_photo, :photos, :icon
+  attributes :id, :name, :full_description, :price, :main_photo, :photos, :icon, :by_agreement
 
   def main_photo
     return unless object.service_photos.main_photo.present?
