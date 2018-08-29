@@ -12,10 +12,9 @@ ActiveAdmin.register Vacancy do
 
   index as: :reorderable_table do
     selectable_column
-    %i[title country city arrive_date is_hot is_on_main active salary_min age].each do |field|
+    %i[title city is_hot is_on_main active salary_min age].each do |field|
       column(field)
     end
-    column(:country, &:country_name)
     column(I18n.t('active_admin.additional_fields.main_img')) do |vacancy|
       admin_image_view(vacancy.vacancy_photos.main_photo, :image)
     end

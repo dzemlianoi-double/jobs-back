@@ -103,8 +103,8 @@ ru:
         position: Номер по порядку
         avatar: Аватар
       service:
+        by_agreement: Цена по договренности
         name: Название
-        short_description: Краткое описание
         full_description: Полное описание
         price: Цена
         position: Номер по порядку
@@ -118,14 +118,14 @@ ru:
         main_img: Основная картинка
         country: Страна
         city: Город
-        salary_min: Минимальна заработная плата
+        salary_min: Мин З/П
         arrive_date: Дата заезда
         video_url: URL видео
         offers_quantity: Количество вакансий(предложений)
         age_min: Минимальный возраст
         age_max: Максимальный возраст
         is_hot: Горячая?
-        is_on_main: Показывать на главной?
+        is_on_main: Главная?
         active: Активная?
         info: Описание
         position: Номер по порядку

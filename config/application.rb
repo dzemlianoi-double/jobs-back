@@ -21,6 +21,7 @@ module JobsBack
   class Application < Rails::Application
     config.i18n.default_locale = :ru
     config.load_defaults 5.2
+    config.active_job.queue_adapter = :sidekiq
     config.api_only = true
     config.middleware.use Rack::MethodOverride
     config.middleware.use ActionDispatch::Flash

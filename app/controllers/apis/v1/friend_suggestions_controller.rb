@@ -19,8 +19,7 @@ module Apis
       end
 
       def create_params
-        params.permit(:name, :phone_number, :vacancy_id)
-        # .require(:suggestion)
+        params..require(:suggestion).permit(:name, :phone_number, :vacancy_id)
       end
     end
   end

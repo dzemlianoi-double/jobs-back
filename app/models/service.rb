@@ -4,7 +4,7 @@ class Service < ApplicationRecord
   has_many :service_photos
   has_many :claims, as: :reasonable
 
-  validates_presence_of :name, :full_description, :short_description
+  validates_presence_of :name, :full_description
   validates_numericality_of :price, greater_than_or_equal_to: 0, only_integer: true
 
   scope :active, -> { where(active: true) }

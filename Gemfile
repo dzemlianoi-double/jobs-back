@@ -30,7 +30,10 @@ gem 'rails-i18n'
 gem 'redis', '~> 4.0'
 gem 'sass-rails'
 gem 'select2-rails'
+gem 'sidekiq'
+gem 'sidekiq-cron'
 gem 'telegram-bot'
+gem 'validates_timeliness'
 
 group :development, :test do
   gem 'pry', platforms: %i[mri mingw x64_mingw]
@@ -46,6 +49,8 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
+  gem 'capistrano-sidekiq'
+  gem 'capistrano3-monit'
   gem 'capistrano3-puma', require: false
   gem 'fasterer'
   gem 'listen', '>= 3.0.5', '< 3.2'
