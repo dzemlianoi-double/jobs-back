@@ -1,7 +1,7 @@
 ActiveAdmin.register Service do
   extend Orderable
 
-  permit_params %i[name full_description position price active icon]
+  permit_params %i[name full_description position price active icon by_agreement]
 
   %i[pame price active].each { |filter_name| filter(filter_name) }
 
