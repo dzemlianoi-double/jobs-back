@@ -4,7 +4,8 @@ class VacancySerializer < ActiveModel::Serializer
   has_many :specialities
 
   attributes :id, :title, :city, :salary_min, :arrive_date, :video_url, :offers_quantity, :age_min, :age_max,
-             :is_hot, :info, :sex, :experience, :main_photo, :photos, :country_name, :created_at
+             :is_hot, :info, :sex, :experience, :main_photo, :photos, :country_name, :created_at, :requirments,
+             :schedule, :accommodation, :duties
 
   def main_photo
     return unless object.vacancy_photos.main_photo.present?

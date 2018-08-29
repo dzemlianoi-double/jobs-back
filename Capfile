@@ -7,7 +7,7 @@ require 'capistrano/bundler'
 require 'capistrano/rails'
 require 'capistrano/monit'
 require 'capistrano/sidekiq'
-require 'capistrano/sidekiq/monit' #to require monit tasks # Only for capistrano3
+require 'capistrano/sidekiq/monit' # to require monit tasks # Only for capistrano3
 require 'capistrano/puma'
 
 install_plugin Capistrano::SCM::Git

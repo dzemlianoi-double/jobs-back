@@ -134,6 +134,10 @@ ru:
         sex: Пол
         experience: Опыт работы
         icon: Иконка
+        requirments: Требования
+        schedule: График
+        accommodation: Жилье
+        duties: Обязанности
       vacancy_photo:
         name: Название
         image: Фото
