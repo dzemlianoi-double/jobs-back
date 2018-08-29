@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_29_091738) do
+ActiveRecord::Schema.define(version: 2018_08_29_161610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -165,6 +165,10 @@ ActiveRecord::Schema.define(version: 2018_08_29_091738) do
     t.date "arrive_date"
     t.integer "sex", default: 0
     t.integer "experience", default: 0
+    t.text "requirments"
+    t.text "schedule"
+    t.text "accommodation"
+    t.text "duties"
     t.index ["active"], name: "index_vacancies_on_active"
     t.index ["age_max"], name: "index_vacancies_on_age_max"
     t.index ["age_min"], name: "index_vacancies_on_age_min"
