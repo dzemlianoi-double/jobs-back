@@ -11,7 +11,7 @@ class Vacancy < ApplicationRecord
   validates_presence_of :title, :country, :city, :salary_min, :age_min, :age_max, :offers_quantity, :info
   validates_numericality_of :salary_min, greater_than_or_equal_to: 0
   validates_numericality_of :age_min, greater_than_or_equal_to: 16
-  validates_datetime :arrive_date, after: :now
+  validates_datetime :arrive_date, after: :now, allow_nil: true
 
   scope :active, -> { where(active: true) }
   scope :by_position, -> { order(:position) }
@@ -22,5 +22,10 @@ class Vacancy < ApplicationRecord
   def country_name
     full_country_name = ISO3166::Country[country]
     full_country_name.translations[I18n.locale.to_s] || country.name
+  end
+
+  def video_url=(value)
+    value.gsub!('watch?v=', 'embed/') if value.present?
+    super(value)
   end
 end
