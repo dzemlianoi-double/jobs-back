@@ -11,10 +11,15 @@ class TelegramBotService
     send_message(suggestion_text)
   end
 
+  def header_text
+    return 'Новый отклик с формы обратной связи' if claim.claim_type.blank?
+    "Новый отклик на #{@claim.claim_type[:name]} - #{@claim.claim_type[:title]}!"
+  end
+
   private
 
   def claim_text
-    "Новый отклик на #{@claim.claim_type[:name]} - #{@claim.claim_type[:title]}!
+    "#{header_text}
 ----------------------------
 Имя: #{@claim.name}
 Телефон: #{@claim.phone_number}
