@@ -12,7 +12,7 @@ class TelegramBotService
   end
 
   def header_text
-    return 'Новый отклик с формы обратной связи' if claim.claim_type.blank?
+    return 'Новый отклик с формы обратной связи' if @claim.claim_type.blank?
     "Новый отклик на #{@claim.claim_type[:name]} - #{@claim.claim_type[:title]}!"
   end
 
