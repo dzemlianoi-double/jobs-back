@@ -5,7 +5,7 @@ module Apis
       MAX_LATEST_QUANTITY = 10
 
       def index
-        render json: Vacancy.active.by_position, adapter: :json
+        render json: Vacancy.active.hotest_first, adapter: :json
       end
 
       def show

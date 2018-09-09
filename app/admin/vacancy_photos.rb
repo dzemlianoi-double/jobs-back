@@ -7,6 +7,8 @@ ActiveAdmin.register VacancyPhoto do
 
   %i[name is_main vacancy].each { |filter_name| filter(filter_name) }
 
+  vacancies = Vacancy.all.map { |item| ["#{item.title} - #{item.city}", item.id] }
+
   index as: :reorderable_table do
     selectable_column
     %i[name is_main vacancy].each { |field| column(field) }
@@ -15,9 +17,10 @@ ActiveAdmin.register VacancyPhoto do
   end
 
   form do |f|
-    inputs 'Создать отзыв' do
+    inputs 'Создать фотографию к вакансии' do
       f.semantic_errors
-      %i[name is_main vacancy].each { |field| f.input(field) }
+      %i[name is_main].each { |field| f.input(field) }
+      f.input :vacancy, collection: vacancies
       f.input :image, as: :file, hint: admin_image_view(f.object, :image)
     end
     f.actions

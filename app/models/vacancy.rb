@@ -18,6 +18,7 @@ class Vacancy < ApplicationRecord
   scope :latest, -> { order(created_at: :desc) }
   scope :for_main, -> { where(is_main: true) }
   scope :hot, -> { where(is_hot: true) }
+  scope :hotest_first, -> { order(is_hot: :desc) }
 
   def country_name
     full_country_name = ISO3166::Country[country]
@@ -25,7 +26,7 @@ class Vacancy < ApplicationRecord
   end
 
   def video_url=(value)
-    value.gsub!('watch?v=', 'embed/') if value.present?
+    value = value.gsub('watch?v=', 'embed/').split('?').first if value.present?
     super(value)
   end
 end
