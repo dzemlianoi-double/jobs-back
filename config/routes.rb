@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   scope 'apis/v1', module: 'apis/v1', as: 'apis_v1', defaults: { format: :json } do
     post 'basic_configurations', to: 'configurations#basic'
-    resources :services, only: %i[index]
+    resources :services, only: %i[index show]
     resources :claims, only: %i[create]
     resources :friend_suggestions, only: %i[create]
     resources :reviews, only: %i[index]
