@@ -1,7 +1,7 @@
 ActiveAdmin.register Configuration do
   extend Orderable
 
-  %i[key value basic_type].each { |field| filter(field) }
+  %i[key value position basic_type].each { |field| filter(field) }
 
   permit_params :key, :value, :basic_type
 
@@ -14,14 +14,14 @@ ActiveAdmin.register Configuration do
   form do |f|
     inputs 'Создать настройку' do
       f.semantic_errors
-      %i[key value basic_type].each { |field| f.input(field) }
+      %i[key value position basic_type].each { |field| f.input(field) }
     end
     f.actions
   end
 
   show do
     attributes_table do
-      %i[id key value basic_type].each { |field| row(field) }
+      %i[id key value position basic_type].each { |field| row(field) }
     end
   end
 end

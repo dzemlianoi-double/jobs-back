@@ -6,10 +6,11 @@ ActiveAdmin.register Vacancy do
   extend Orderable
 
   permit_params :title, :country, :city, :salary_min, :arrive_date, :video_url, :offers_quantity, :age_min, :age_max,
-                :requirments, :schedule, :accommodation, :duties, :is_hot, :is_on_main, :active, :info, :sex, :experience,
+                :requirments, :schedule, :accommodation, :duties, :is_hot, :is_on_main, :position, :active, :info, :sex, :experience,
                 :position, vacancy_speciality_ids: [], speciality_ids: []
 
-  %i[title country city is_hot is_on_main active].each { |field| filter(field) }
+  %i[title country is_hot is_on_main active].each { |field| filter(field) }
+  filter :city, as: :select, collection: -> { Vacancy.pluck(:city).uniq }
 
   index as: :reorderable_table do
     selectable_column
@@ -30,7 +31,7 @@ ActiveAdmin.register Vacancy do
     end
 
     inputs 'Детали' do
-      %i[title salary_min arrive_date age_min age_max sex experience offers_quantity active video_url].each do |field|
+      %i[position title salary_min arrive_date age_min age_max sex experience offers_quantity active video_url].each do |field|
         f.input(field)
       end
     end
@@ -53,7 +54,7 @@ ActiveAdmin.register Vacancy do
   show do
     attributes_table do
       row(:country, &:country_name)
-      %i[city arrive_date is_hot is_on_main sex title experience salary_min age
+      %i[position city arrive_date is_hot is_on_main sex title experience salary_min age
          active requirments schedule accommodation duties info video_url].each do |field|
         row(field)
       end

@@ -3,7 +3,7 @@ ActiveAdmin.register Claim do
 
   actions :all, except: %i[edit update]
 
-  permit_params %i[email phone_number text name position source vacancy_id]
+  permit_params %i[email phone_number text name position position source vacancy_id]
 
   %i[name email phone_number source vacancy].each { |field| filter(field) }
 
@@ -17,14 +17,14 @@ ActiveAdmin.register Claim do
   form do |f|
     inputs 'Создать заявку' do
       f.semantic_errors
-      %i[name email phone_number source text reasonable].each { |field| f.input(field) }
+      %i[name email phone_number source text position reasonable].each { |field| f.input(field) }
     end
     f.actions
   end
 
   show do
     attributes_table do
-      %i[id name email phone_number source text reasonable created_at].each { |field| row(field) }
+      %i[id name email phone_number source text position reasonable created_at].each { |field| row(field) }
     end
   end
 end

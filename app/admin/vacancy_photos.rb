@@ -17,7 +17,7 @@ ActiveAdmin.register VacancyPhoto do
   form do |f|
     inputs 'Создать фотографию к вакансии' do
       f.semantic_errors
-      %i[name is_main].each { |field| f.input(field) }
+      %i[name is_main position].each { |field| f.input(field) }
       f.input :vacancy, collection: Vacancy.all.map { |item| ["#{item.title} - #{item.city}", item.id] }
       f.input :image, as: :file, hint: admin_image_view(f.object, :image)
     end
@@ -26,7 +26,7 @@ ActiveAdmin.register VacancyPhoto do
 
   show do
     attributes_table do
-      %i[name is_main vacancy].each { |field| row(field) }
+      %i[name is_main vacancy position].each { |field| row(field) }
       row(:image) { |photo| admin_image_view(photo, :image) }
     end
   end

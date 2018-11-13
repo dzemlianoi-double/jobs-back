@@ -17,7 +17,7 @@ ActiveAdmin.register ServicePhoto do
   form do |f|
     inputs 'Создать отзыв' do
       f.semantic_errors
-      %i[name is_main service].each { |field| f.input(field) }
+      %i[name is_main position service].each { |field| f.input(field) }
       f.input :image, as: :file, hint: admin_image_view(f.object, :image)
     end
     f.actions
@@ -25,7 +25,7 @@ ActiveAdmin.register ServicePhoto do
 
   show do
     attributes_table do
-      %i[name is_main service].each { |field| row(field) }
+      %i[name is_main position sservice].each { |field| row(field) }
       row(:image) { |current_service| admin_image_view(current_service, :image) }
     end
   end
